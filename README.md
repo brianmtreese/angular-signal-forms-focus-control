@@ -49,6 +49,7 @@ shipping/
 
 sign-up/
   profile-form.component.ts
+```
 
 ---
 
@@ -57,3 +58,4 @@ sign-up/
 ```bash
 npm install
 ng serve
+```
