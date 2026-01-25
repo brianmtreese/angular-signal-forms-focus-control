@@ -1,0 +1,35 @@
+<form (submit)="onSubmit($event)">
+  <h3>Billing Address</h3>
+  <div class="field-group">
+    <label>
+      Street
+      <input type="text" [field]="form.street" />
+      <app-validation-errors [fieldState]="form.street()" />
+    </label>
+    <div class="row">
+      <label>
+        City
+        <input type="text" [field]="form.city" />
+        <app-validation-errors [fieldState]="form.city()" />
+      </label>
+      <label>
+        State
+        <input type="text" [field]="form.state" />
+        <app-validation-errors [fieldState]="form.state()" />
+      </label>
+      <label>
+        ZIP
+        <input type="text" [field]="form.zip" />
+        <app-validation-errors [fieldState]="form.zip()" />
+      </label>
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" (click)="reset()">
+      Reset
+    </button>
+    <button type="submit" [disabled]="!form().valid()">
+      Submit
+    </button>
+  </div>
+</form>
