@@ -3,23 +3,23 @@
   <div class="field-group">
     <label>
       Street
-      <input type="text" [field]="form.street" />
+      <input type="text" [formField]="form.street" />
       <app-validation-errors [fieldState]="form.street()" />
     </label>
     <div class="row">
       <label>
         City
-        <input type="text" [field]="form.city" />
+        <input type="text" [formField]="form.city" />
         <app-validation-errors [fieldState]="form.city()" />
       </label>
       <label>
         State
-        <input type="text" [field]="form.state" />
+        <input type="text" [formField]="form.state" />
         <app-validation-errors [fieldState]="form.state()" />
       </label>
       <label>
         ZIP
-        <input type="text" [field]="form.zip" />
+        <input type="text" [formField]="form.zip" />
         <app-validation-errors [fieldState]="form.zip()" />
       </label>
     </div>

@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Field, form, pattern, required, submit } from '@angular/forms/signals';
+import { form, pattern, required, submit, FormField } from '@angular/forms/signals';
 import { ValidationErrorsComponent } from '../shared/validation-errors/validation-errors.component';
 
 export interface Address {
@@ -13,7 +13,7 @@ export interface Address {
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
   styleUrls: ['./address-form.component.scss'],
-  imports: [Field, ValidationErrorsComponent],
+  imports: [FormField, ValidationErrorsComponent],
 })
 export class AddressFormComponent {
   readonly model = signal<Address>({
