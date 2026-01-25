@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "signal-forms-composition": {
+    "signal-forms-focus-bound-control": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "signal-forms-composition:build:production"
+              "buildTarget": "signal-forms-focus-bound-control:build:production"
             },
             "development": {
-              "buildTarget": "signal-forms-composition:build:development"
+              "buildTarget": "signal-forms-focus-bound-control:build:development"
             }
           },
           "defaultConfiguration": "development"

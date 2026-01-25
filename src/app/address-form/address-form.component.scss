@@ -24,4 +24,13 @@ input {
   margin-block: 2rem 0;
   display: flex;
   justify-content: space-between;
+
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+p {
+  line-height: 1.5;
 }

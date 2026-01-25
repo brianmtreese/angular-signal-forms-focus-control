@@ -1,54 +1,62 @@
-# Angular Signal Forms – Scalable Form Composition Example
+# Angular Signal Forms – Focus-Bound Control Demo
 
-This repository contains the **refactored version** of a large Angular form built using **Angular Signal Forms**.
+This repository demonstrates how to use the **`focusBoundControl()`** method in Angular Signal Forms to programmatically focus form controls.
 
-It demonstrates a possible method to structure **large, real-world forms** using reusable model factories, section builders, and clean parent orchestration, avoiding monolithic form definitions and tight coupling.
-
-This repository represents a **possible scalable architecture** when adopting Signal Forms in production applications.
+It shows different approaches to focusing form fields, including:
+- Using `focusBoundControl()` to focus the first invalid field
+- Using `focusBoundControl({ preventScroll: true })` to focus without scrolling
+- Finding invalid fields using `errorSummary()` and focusing them individually
 
 ---
 
 ## What This Repo Demonstrates
 
-- Angular Signal Forms used in a real, multi-section form
-- Reusable **model factories** per domain
-- **Section builder functions** that encapsulate fields and validation
-- Clean parent form composition using `form()`
-- Passing **form slices** to child components
-- Avoiding large, monolithic `form()` blocks
-- A scalable and maintainable Signal Forms architecture
+- Angular Signal Forms with an address form example
+- Using `form().focusBoundControl()` to programmatically focus controls
+- Focusing invalid fields after form reset or validation
+- Different focus strategies and their use cases
+- Integration with form validation and error handling
 
 ---
 
-## Key Architectural Concepts
+## Key Features
 
-### Model Factories
-Each form section exports a `createXModel()` function that defines its initial state and shape.
+### Focus-Bound Control
+The `focusBoundControl()` method allows you to focus form controls programmatically without directly accessing DOM elements. This is especially useful for:
+- Focusing the first invalid field after form submission
+- Focusing fields after resetting a form
+- Improving accessibility and user experience
 
-### Section Builders
-Each form section encapsulates its fields and validation logic inside a `buildXSection()` function.
+### Example Usage
 
-### Parent Orchestration
-The parent form composes sections without owning their internal implementation details.
+```typescript
+// Focus the first invalid field
+this.form().focusBoundControl();
 
-### Form Slice Isolation
-Child components receive **only the portion of form state they need**, keeping them reusable and decoupled.
+// Focus without scrolling
+this.form().focusBoundControl({ preventScroll: true });
+
+// Focus a specific invalid field from error summary
+const nextInvalidField = this.form().errorSummary()[0];
+if (nextInvalidField) {
+  nextInvalidField.fieldTree().focusBoundControl();
+}
+```
 
 ---
 
 ## Directory Structure Overview
 
 ```text
-account/
-  account-form.model.ts
-  account-form.component.ts
-
-shipping/
-  address-form.model.ts
-  address-form.component.ts
-
-sign-up/
-  profile-form.component.ts
+src/app/
+  address-form/
+    address-form.component.ts    # Main form component demonstrating focusBoundControl()
+    address-form.component.html   # Form template
+    address-form.component.scss   # Styles
+  
+  shared/
+    validation-errors/
+      validation-errors.component.ts  # Reusable validation error display component
 ```
 
 ---
@@ -63,5 +71,5 @@ ng serve
 ---
 
 ## Related Resources
-- 🎥 **YouTube Tutorial**: [https://youtu.be/hgy3t9mFmuc](https://youtu.be/hgy3t9mFmuc)
-- 🟥 **Before Version (Pre–Signal Forms)**: [https://github.com/brianmtreese/signal-forms-composition-example-before](https://github.com/brianmtreese/signal-forms-composition-example-before)
+- 🎥 **YouTube Tutorial**: Coming Soon
+- 📚 **Angular Signal Forms Documentation**: [Angular Forms Guide](https://angular.dev/guide/forms/signal-forms)
