@@ -1,4 +1,4 @@
-# Angular Signal Forms – Focus-Bound Control Demo
+# Angular Signal Forms - focusBoundControl() Demo
 
 This repository demonstrates how to use the **`focusBoundControl()`** method in Angular Signal Forms to programmatically focus form controls.
 
@@ -71,5 +71,4 @@ ng serve
 ---
 
 ## Related Resources
-- 🎥 **YouTube Tutorial**: Coming Soon
-- 📚 **Angular Signal Forms Documentation**: [Angular Forms Guide](https://angular.dev/guide/forms/signal-forms)
+- 🎥 **YouTube Tutorial**: [https://youtu.be/IBZeZy_0X_s](https://youtu.be/IBZeZy_0X_s)
