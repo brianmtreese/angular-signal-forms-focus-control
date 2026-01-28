@@ -66,10 +66,10 @@ export class AddressFormComponent {
     // }
 
     // 2.
-    // const nextInvalidField = this.form().errorSummary()[0];
-    // if (nextInvalidField) {
-    //   nextInvalidField.fieldTree().focusBoundControl();
-    // }
+    const nextInvalidField = this.form().errorSummary()[0];
+    if (nextInvalidField) {
+      nextInvalidField.fieldTree().focusBoundControl();
+    }
   }
 
   protected onSubmit(event: SubmitEvent) {
